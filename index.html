@@ -57,20 +57,26 @@
     footer { padding:30px 0 42px; text-align:center; font-size:.9rem; color:var(--muted); border-top:1px solid rgba(20,33,61,.08); }
     footer strong { color:var(--ink); }
     @media (max-width:820px) {
-      .nav-inner { min-height:56px; }
+      .nav-inner { min-height:52px; }
       .nav-links { gap:14px; font-size:.82rem; }
-      .hero { padding:42px 0 40px; }
-      .hero-grid,.book-grid,.about-grid { grid-template-columns:1fr; gap:36px; }
-      .hero-copy { order:2; }
-      .hero-cover { order:1; }
-      .hero-cover img { width:min(78%,320px); }
-      h1 { font-size:clamp(2.7rem,13vw,4.5rem); }
+      .hero { padding:36px 0 38px; }
+      .hero-grid,.book-grid,.about-grid { grid-template-columns:1fr; gap:30px; }
+      .hero-copy { order:1; }
+      .hero-cover { order:2; margin-top:4px; }
+      .hero-cover img { width:min(66%,270px); }
+      h1 { font-size:clamp(2.7rem,12vw,4.35rem); }
       .three-up { grid-template-columns:1fr; }
       main section { padding:54px 0; }
+      .scroll-cue { margin-top:24px; }
     }
     @media (max-width:600px) {
-      .nav-inner { align-items:flex-start; flex-direction:column; padding:14px 0; gap:8px; }
-      .nav-links { width:100%; justify-content:space-between; gap:8px; }
+      .nav-inner { align-items:flex-start; flex-direction:column; padding:10px 0 9px; gap:5px; }
+      .brand { font-size:.82rem; }
+      .nav-links { width:100%; justify-content:space-between; gap:8px; font-size:.78rem; }
+      .hero { padding-top:30px; }
+      .eyebrow { font-size:.72rem; }
+      .lead { margin-bottom:20px; }
+      .release { margin-bottom:18px; }
     }
     @media (max-width:520px) {
       .wrap { width:min(100% - 28px,1120px); }
@@ -78,6 +84,7 @@
       .signup-form { display:grid; }
       .signup-form button { width:100%; }
       .release { font-size:.88rem; }
+      .hero-cover img { width:min(64%,250px); }
     }
   </style>
 </head>
@@ -149,8 +156,8 @@
       <div class="wrap about-grid">
         <div><p class="eyebrow">About the author</p><h2>Kevin Lorance</h2></div>
         <div class="about-box prose">
-          <p>Kevin Lorance writes and teaches about the places where Christian belief meets ordinary life. He serves in his local church, leading Bible studies and helping people wrestle honestly with what it means to trust God beyond the things we say we believe.</p>
-          <p><em>The Faith You Already Have</em> grew out of a simple conviction: spiritual growth is not only about discovering something new. Often, it is about trusting God enough to live what we already know.</p>
+          <p>Kevin Lorance is a husband, dad, Bible teacher, and church leader who writes about the places where Christian belief meets ordinary life. He has spent years leading Bible studies and teaching in his local church, helping people wrestle honestly with what it means to trust God beyond the things we say we believe.</p>
+          <p><em>The Faith You Already Have</em> grew out of that same conviction: spiritual growth is not only about discovering something new. Often, it is about trusting God enough to live what we already know.</p>
         </div>
       </div>
     </section>
