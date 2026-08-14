@@ -6,375 +6,150 @@
   <meta name="description" content="The Faith You Already Have by Kevin Lorance. Learning to live from what you already believe. Releasing September 15, 2026.">
   <title>The Faith You Already Have | Kevin Lorance</title>
   <style>
-    :root {
-      --ink: #14213D;
-      --paper: #FAF8F2;
-      --paper-deep: #F0EBDD;
-      --gold: #B7924A;
-      --olive: #68704A;
-      --muted: #5D6471;
-      --white: #FFFFFF;
-      --shadow: 0 22px 60px rgba(20, 33, 61, 0.16);
+    :root { --ink:#14213D; --paper:#FAF8F2; --paper-deep:#F0EBDD; --gold:#B7924A; --olive:#68704A; --muted:#5D6471; --white:#FFFFFF; --shadow:0 22px 60px rgba(20,33,61,.16); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:Georgia,"Times New Roman",serif; background:var(--paper); color:var(--ink); line-height:1.7; }
+    a { color:inherit; }
+    .wrap { width:min(1120px,calc(100% - 40px)); margin:0 auto; }
+    .site-nav { background:rgba(250,248,242,.96); border-bottom:1px solid rgba(20,33,61,.08); }
+    .nav-inner { min-height:62px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { font-weight:700; text-decoration:none; letter-spacing:.08em; font-size:.88rem; }
+    .nav-links { display:flex; gap:24px; align-items:center; font-size:.9rem; }
+    .nav-links a { text-decoration:none; color:var(--muted); }
+    .nav-links a:hover { color:var(--ink); }
+    .eyebrow { text-transform:uppercase; letter-spacing:.16em; font-size:.78rem; font-weight:700; color:var(--olive); margin:0 0 12px; }
+    .hero { padding:64px 0 42px; background:radial-gradient(circle at 18% 10%,rgba(183,146,74,.15),transparent 32%),linear-gradient(180deg,#FCFAF5 0%,var(--paper) 100%); border-bottom:1px solid rgba(20,33,61,.08); }
+    .hero-grid { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr); gap:72px; align-items:center; }
+    h1 { font-size:clamp(2.8rem,7vw,5.6rem); line-height:.98; letter-spacing:-.035em; margin:0 0 18px; max-width:760px; }
+    .subtitle { font-size:clamp(1.2rem,2.4vw,1.65rem); font-style:italic; margin:0 0 24px; color:var(--muted); }
+    .lead { font-size:clamp(1.15rem,2vw,1.35rem); max-width:620px; margin:0 0 26px; }
+    .release { display:inline-flex; align-items:center; padding:9px 14px; border:1px solid rgba(104,112,74,.28); border-radius:999px; background:rgba(255,255,255,.55); font-size:.95rem; margin-bottom:24px; }
+    .release strong { color:var(--olive); }
+    .hero-cover { display:flex; justify-content:center; }
+    .hero-cover img { width:min(100%,350px); border-radius:8px; box-shadow:var(--shadow); display:block; }
+    .signup-card { margin-top:20px; padding:20px; background:rgba(255,255,255,.82); border:1px solid rgba(20,33,61,.09); border-radius:12px; max-width:650px; }
+    .signup-card p { margin:0 0 10px; color:var(--muted); font-size:.98rem; }
+    .signup-form { display:flex; gap:8px; flex-wrap:wrap; margin:0; }
+    .signup-form input[type="email"] { flex:1 1 260px; min-width:0; padding:12px 14px; font:inherit; border:1px solid #CFCFCF; border-radius:6px; background:#fff; }
+    .signup-form button { padding:12px 18px; font:inherit; font-weight:700; border:0; border-radius:6px; cursor:pointer; background:var(--ink); color:var(--white); }
+    .signup-form button:hover { opacity:.92; }
+    .scroll-cue { text-align:center; margin-top:30px; font-size:.82rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+    .scroll-cue a { text-decoration:none; }
+    main section { padding:72px 0; scroll-margin-top:24px; }
+    .section-alt { background:var(--paper-deep); }
+    .section-heading { max-width:760px; margin-bottom:34px; }
+    h2 { font-size:clamp(2rem,4vw,3.1rem); line-height:1.1; letter-spacing:-.02em; margin:0 0 18px; }
+    .section-heading p,.prose p { font-size:1.08rem; color:#303A51; }
+    .three-up { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+    .card { padding:26px; background:rgba(255,255,255,.68); border:1px solid rgba(20,33,61,.08); border-radius:12px; }
+    .card h3 { margin:0 0 10px; font-size:1.25rem; }
+    .card p { margin:0; color:var(--muted); }
+    .quote { max-width:880px; margin:0 auto; text-align:center; font-size:clamp(1.6rem,3vw,2.35rem); line-height:1.35; font-style:italic; }
+    .book-grid,.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
+    .book-points { margin:24px 0 0; padding-left:1.2rem; }
+    .book-points li { margin:10px 0; }
+    .about-box { padding:30px; border-left:4px solid var(--gold); background:rgba(255,255,255,.58); }
+    .launch { text-align:center; padding:76px 0 84px; background:var(--ink); color:var(--paper); }
+    .launch .eyebrow { color:#D3BE8C; }
+    .launch > .wrap > p:not(.eyebrow) { max-width:650px; margin:0 auto 24px; color:#E1E4EA; font-size:1.08rem; }
+    .launch .signup-card { margin:28px auto 0; text-align:left; background:#fff; color:var(--ink); }
+    footer { padding:30px 0 42px; text-align:center; font-size:.9rem; color:var(--muted); border-top:1px solid rgba(20,33,61,.08); }
+    footer strong { color:var(--ink); }
+    @media (max-width:820px) {
+      .nav-inner { min-height:56px; }
+      .nav-links { gap:14px; font-size:.82rem; }
+      .hero { padding:42px 0 40px; }
+      .hero-grid,.book-grid,.about-grid { grid-template-columns:1fr; gap:36px; }
+      .hero-copy { order:2; }
+      .hero-cover { order:1; }
+      .hero-cover img { width:min(78%,320px); }
+      h1 { font-size:clamp(2.7rem,13vw,4.5rem); }
+      .three-up { grid-template-columns:1fr; }
+      main section { padding:54px 0; }
     }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background: var(--paper);
-      color: var(--ink);
-      line-height: 1.7;
+    @media (max-width:600px) {
+      .nav-inner { align-items:flex-start; flex-direction:column; padding:14px 0; gap:8px; }
+      .nav-links { width:100%; justify-content:space-between; gap:8px; }
     }
-
-    a { color: inherit; }
-
-    .wrap {
-      width: min(1120px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      font-size: .78rem;
-      font-weight: 700;
-      color: var(--olive);
-      margin: 0 0 12px;
-    }
-
-    .hero {
-      padding: 72px 0 68px;
-      background:
-        radial-gradient(circle at 18% 10%, rgba(183,146,74,.15), transparent 32%),
-        linear-gradient(180deg, #FCFAF5 0%, var(--paper) 100%);
-      border-bottom: 1px solid rgba(20,33,61,.08);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr);
-      gap: 72px;
-      align-items: center;
-    }
-
-    h1 {
-      font-size: clamp(2.8rem, 7vw, 5.6rem);
-      line-height: .98;
-      letter-spacing: -.035em;
-      margin: 0 0 18px;
-      max-width: 760px;
-    }
-
-    .subtitle {
-      font-size: clamp(1.2rem, 2.4vw, 1.65rem);
-      font-style: italic;
-      margin: 0 0 24px;
-      color: var(--muted);
-    }
-
-    .lead {
-      font-size: clamp(1.15rem, 2vw, 1.35rem);
-      max-width: 690px;
-      margin: 0 0 26px;
-    }
-
-    .release {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 9px 14px;
-      border: 1px solid rgba(104,112,74,.28);
-      border-radius: 999px;
-      background: rgba(255,255,255,.55);
-      font-size: .95rem;
-      margin-bottom: 28px;
-    }
-
-    .release strong { color: var(--olive); }
-
-    .hero-cover {
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-cover img {
-      width: min(100%, 350px);
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-      display: block;
-    }
-
-    .signup-card {
-      margin-top: 28px;
-      padding: 24px;
-      background: var(--white);
-      border: 1px solid rgba(20,33,61,.09);
-      border-radius: 14px;
-      box-shadow: 0 12px 34px rgba(20,33,61,.08);
-      max-width: 690px;
-    }
-
-    .signup-card p {
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    .signup-form {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin: 0;
-    }
-
-    .signup-form input[type="email"] {
-      flex: 1 1 260px;
-      min-width: 0;
-      padding: 13px 14px;
-      font: inherit;
-      border: 1px solid #CFCFCF;
-      border-radius: 6px;
-      background: #fff;
-    }
-
-    .signup-form button {
-      padding: 13px 20px;
-      font: inherit;
-      font-weight: 700;
-      border: 0;
-      border-radius: 6px;
-      cursor: pointer;
-      background: var(--ink);
-      color: var(--white);
-    }
-
-    .signup-form button:hover { opacity: .92; }
-
-    main section { padding: 72px 0; }
-
-    .section-alt { background: var(--paper-deep); }
-
-    .section-heading {
-      max-width: 760px;
-      margin-bottom: 34px;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 4vw, 3.1rem);
-      line-height: 1.1;
-      letter-spacing: -.02em;
-      margin: 0 0 18px;
-    }
-
-    .section-heading p,
-    .prose p {
-      font-size: 1.08rem;
-      color: #303A51;
-    }
-
-    .three-up {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .card {
-      padding: 26px;
-      background: rgba(255,255,255,.68);
-      border: 1px solid rgba(20,33,61,.08);
-      border-radius: 12px;
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 1.25rem;
-    }
-
-    .card p { margin: 0; color: var(--muted); }
-
-    .quote {
-      max-width: 880px;
-      margin: 0 auto;
-      text-align: center;
-      font-size: clamp(1.6rem, 3vw, 2.35rem);
-      line-height: 1.35;
-      font-style: italic;
-    }
-
-    .book-grid,
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: start;
-    }
-
-    .book-points {
-      margin: 24px 0 0;
-      padding-left: 1.2rem;
-    }
-
-    .book-points li { margin: 10px 0; }
-
-    .about-box {
-      padding: 30px;
-      border-left: 4px solid var(--gold);
-      background: rgba(255,255,255,.58);
-    }
-
-    .launch {
-      text-align: center;
-      padding: 76px 0 84px;
-      background: var(--ink);
-      color: var(--paper);
-    }
-
-    .launch .eyebrow { color: #D3BE8C; }
-    .launch p {
-      max-width: 650px;
-      margin: 0 auto 24px;
-      color: #E1E4EA;
-      font-size: 1.08rem;
-    }
-
-    .launch .signup-card {
-      margin: 28px auto 0;
-      text-align: left;
-      background: #fff;
-      color: var(--ink);
-    }
-
-    footer {
-      padding: 30px 0 42px;
-      text-align: center;
-      font-size: .9rem;
-      color: var(--muted);
-      border-top: 1px solid rgba(20,33,61,.08);
-    }
-
-    footer strong { color: var(--ink); }
-
-    @media (max-width: 820px) {
-      .hero {
-        padding: 48px 0 54px;
-      }
-
-      .hero-grid,
-      .book-grid,
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 36px;
-      }
-
-      .hero-copy { order: 2; }
-      .hero-cover { order: 1; }
-
-      .hero-cover img { width: min(78%, 320px); }
-
-      h1 { font-size: clamp(2.7rem, 13vw, 4.5rem); }
-
-      .three-up { grid-template-columns: 1fr; }
-
-      main section { padding: 54px 0; }
-    }
-
-    @media (max-width: 520px) {
-      .wrap { width: min(100% - 28px, 1120px); }
-      .signup-card { padding: 18px; }
-      .signup-form { display: grid; }
-      .signup-form button { width: 100%; }
-      .release { font-size: .88rem; }
+    @media (max-width:520px) {
+      .wrap { width:min(100% - 28px,1120px); }
+      .signup-card { padding:16px; }
+      .signup-form { display:grid; }
+      .signup-form button { width:100%; }
+      .release { font-size:.88rem; }
     }
   </style>
 </head>
-
 <body>
-  <header class="hero">
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">KEVIN LORANCE</a>
+      <div class="nav-links">
+        <a href="#about-book">About the Book</a>
+        <a href="#about-kevin">About Kevin</a>
+        <a href="#launch-list">Launch List</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">A new book from Kevin Lorance</p>
         <h1>The Faith You Already Have</h1>
         <p class="subtitle">Learning to Live From What You Believe</p>
-        <p class="lead">Most of us do not need more information. We need to start living from what we already know about God.</p>
+        <p class="lead">Most of us do not need more information.<br>We need to start living from what we already know about God.</p>
         <div class="release"><strong>Releasing September 15, 2026</strong></div>
-
         <div class="signup-card">
-          <p><strong>Join the launch list.</strong> I’ll send you the release reminder, book links, and a few updates as launch day gets closer.</p>
+          <p><strong>Join the launch list.</strong> Get the release reminder, book links, and a few updates as launch day gets closer.</p>
           <form class="signup-form" action="https://app.kit.com/forms/9373074/subscriptions" method="post">
             <input name="email_address" aria-label="Email Address" placeholder="Your email address" required type="email">
             <button type="submit">Join the Launch List</button>
           </form>
         </div>
       </div>
-
       <div class="hero-cover">
         <img src="images/faith_cover_high_res.jpg" alt="Cover of The Faith You Already Have by Kevin Lorance">
       </div>
     </div>
+    <div class="wrap scroll-cue"><a href="#heart">Explore the book ↓</a></div>
   </header>
 
   <main>
-    <section>
+    <section id="heart">
       <div class="wrap">
         <div class="section-heading">
           <p class="eyebrow">The heart of the book</p>
           <h2>What if the gap is not between what you know and what you need to learn?</h2>
           <p>What if the real gap is between what you say you believe and the way you actually live?</p>
         </div>
-
         <div class="three-up">
-          <article class="card">
-            <h3>Who God Is</h3>
-            <p>Faith begins with the character of God, not with our ability to hold everything together.</p>
-          </article>
-          <article class="card">
-            <h3>How God Speaks</h3>
-            <p>We learn to recognize what God has already made known through Scripture, truth, and the life of faith.</p>
-          </article>
-          <article class="card">
-            <h3>The Way of Response</h3>
-            <p>Belief becomes visible when trust moves from something we affirm to something we practice.</p>
-          </article>
+          <article class="card"><h3>Who God Is</h3><p>Faith begins with the character of God, not with our ability to hold everything together.</p></article>
+          <article class="card"><h3>How God Speaks</h3><p>We learn to recognize what God has already made known through Scripture, truth, and the life of faith.</p></article>
+          <article class="card"><h3>The Way of Response</h3><p>Belief becomes visible when trust moves from something we affirm to something we practice.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section-alt">
-      <div class="wrap">
-        <p class="quote">“The goal is not to collect more faith. It is to live from the faith you already have.”</p>
-      </div>
-    </section>
+    <section class="section-alt"><div class="wrap"><p class="quote">“The goal is not to collect more faith. It is to live from the faith you already have.”</p></div></section>
 
-    <section>
+    <section id="about-book">
       <div class="wrap book-grid">
-        <div>
-          <p class="eyebrow">About the book</p>
-          <h2>For Christians who know the answers but still struggle to live like they are true.</h2>
-        </div>
+        <div><p class="eyebrow">About the book</p><h2>For Christians who know the answers but still struggle to live like they are true.</h2></div>
         <div class="prose">
           <p><em>The Faith You Already Have</em> is about closing the distance between belief and response. It is not a call to know less. It is an invitation to trust what God has already revealed enough to let it shape the next decision, the next fear, the next act of obedience, and the next ordinary day.</p>
           <p>This is a book for readers who have spent years around Scripture and church, but still find themselves asking why familiar truth can feel so difficult to live.</p>
-          <ul class="book-points">
-            <li>Ground faith in the character of God.</li>
-            <li>Recognize the ways belief and daily life drift apart.</li>
-            <li>Move from agreement with truth toward active trust.</li>
-            <li>Respond faithfully without waiting to feel perfectly ready.</li>
-          </ul>
+          <ul class="book-points"><li>Ground faith in the character of God.</li><li>Recognize the ways belief and daily life drift apart.</li><li>Move from agreement with truth toward active trust.</li><li>Respond faithfully without waiting to feel perfectly ready.</li></ul>
         </div>
       </div>
     </section>
 
-    <section class="section-alt">
+    <section class="section-alt" id="about-kevin">
       <div class="wrap about-grid">
-        <div>
-          <p class="eyebrow">About the author</p>
-          <h2>Kevin Lorance</h2>
-        </div>
+        <div><p class="eyebrow">About the author</p><h2>Kevin Lorance</h2></div>
         <div class="about-box prose">
-          <p>Kevin Lorance is a Christian writer, Bible teacher, and church leader with a heart for helping ordinary believers live from the truth they already confess.</p>
+          <p>Kevin Lorance writes and teaches about the places where Christian belief meets ordinary life. He serves in his local church, leading Bible studies and helping people wrestle honestly with what it means to trust God beyond the things we say we believe.</p>
           <p><em>The Faith You Already Have</em> grew out of a simple conviction: spiritual growth is not only about discovering something new. Often, it is about trusting God enough to live what we already know.</p>
         </div>
       </div>
@@ -385,7 +160,6 @@
         <p class="eyebrow">September 15, 2026</p>
         <h2>Be there when the book launches.</h2>
         <p>Join the email list and I’ll make sure you have the release details when <em>The Faith You Already Have</em> becomes available.</p>
-
         <div class="signup-card">
           <p><strong>No noise.</strong> Just launch updates and the information you need to find the book.</p>
           <form class="signup-form" action="https://app.kit.com/forms/9373074/subscriptions" method="post">
@@ -397,11 +171,6 @@
     </section>
   </main>
 
-  <footer>
-    <div class="wrap">
-      <p><strong>Kevin Lorance</strong> · <em>The Faith You Already Have</em></p>
-      <p>Published by Kingdom Ground Press</p>
-    </div>
-  </footer>
+  <footer><div class="wrap"><p><strong>Kevin Lorance</strong> · <em>The Faith You Already Have</em></p><p>Published by Kingdom Ground Press</p></div></footer>
 </body>
 </html>
